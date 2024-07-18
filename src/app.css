@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * Here you can add global CSS, that will apply to all your components.
+ */
+
+* {
+	/* Uncomment this line to see the effect */
+	/* color: red; */
+}
