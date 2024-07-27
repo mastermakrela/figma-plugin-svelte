@@ -15,4 +15,9 @@ export default defineConfig(({ mode }) => ({
 			},
 		},
 	},
+	resolve: {
+		alias: {
+			$lib: path.resolve("./src/lib"),
+		},
+	},
 }));

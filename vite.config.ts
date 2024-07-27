@@ -11,6 +11,7 @@ export default defineConfig(({ mode }) => ({
 		}),
 	],
 	build: {
+		minify: mode === "production",
 		emptyOutDir: false,
 	},
 	resolve: {

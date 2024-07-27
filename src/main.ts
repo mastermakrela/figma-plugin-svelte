@@ -1,5 +1,5 @@
 import { mount } from "svelte";
-import "./app.css";
+import "./plugin_ui/app.css";
 import Plugin from "./plugin_ui/Plugin.svelte";
 
 /**

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Counter from "./Counter.svelte";
-	import "../app.css";
+	import { get_random_number } from "$lib";
 
 	/**
 	 * Sends a message to plugin's `code.ts` file.
@@ -32,12 +32,14 @@
 		postMessage({ type: "button-click" });
 	}
 
-	let count = $state(0);
+	const initial_count = get_random_number();
+
+	let count = $state(initial_count);
 	let text = $state("");
 </script>
 
 <main class="prose h-full bg-gray-100 dark:bg-gray-900 flex flex-col items-center justify-center py-8 px-4 text-center">
-	<h1>Hello Figma Plugin</h1>
+	<h1>Figma Plugin Svelte</h1>
 
 	<p>
 		Open console (<kbd>⌘</kbd> + <kbd>⌥</kbd> + <kbd>I</kbd> / <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd>) to see
@@ -51,7 +53,13 @@
 
 	<div>
 		<p>This sends a message to the plugin - to increment the count - and then receives the updated count.</p>
-		<p>count: {count}</p>
+		<p>
+			count: {count}
+			<br />
+			{#if count === initial_count}
+				<span class="text-sm text-opacity-50">(this is a random starting number, so you can't see it changing)</span>
+			{/if}
+		</p>
 		<button onclick={() => postMessage({ type: "increment" })}>+1</button>
 	</div>
 

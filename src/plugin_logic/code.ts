@@ -1,3 +1,5 @@
+import { get_random_number } from "$lib";
+
 // MARK: - Helpers
 
 /**
@@ -27,7 +29,8 @@ figma.ui.onmessage = async (msg: UiMessage) => {
 	switch (msg.type) {
 		case "button-click":
 			console.log("Message received: button clicked in UI");
-			figma.notify("You did the thing! (clicked the button)");
+			const random_number = get_random_number();
+			figma.notify(`You did the thing! (your lucky number is ${random_number}`);
 			break;
 
 		case "increment":

@@ -5,25 +5,26 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
-		"dev:ui": "vite build --watch",
-		"dev:plugin": "vite build -c vite.config.plugin.ts --watch",
+		"dev:ui": "vite build --watch --mode development",
+		"dev:plugin": "vite build -c vite.config.plugin.ts --watch --mode development",
 		"build": "vite build && vite build -c vite.config.plugin.ts",
-		"check": "svelte-check --tsconfig ./tsconfig.json && tsc -p tsconfig.node.json"
+		"check": "svelte-check --tsconfig ./tsconfig.json && tsc -p tsconfig.node.json",
+		"gen:uuid": "bun -e 'Bun.file(`./public/manifest.json`).json().then((m) => {m.id = crypto.randomUUID(); Bun.write(`./public/manifest.json`, JSON.stringify(m, null, 2));});'"
 	},
 	"devDependencies": {
 		"@figma/plugin-typings": "^1.97.0",
 		"@sveltejs/vite-plugin-svelte": "^3.1.1",
 		"@tailwindcss/typography": "^0.5.13",
 		"@tsconfig/svelte": "^5.0.4",
-		"@types/node": "^20.14.11",
+		"@types/node": "^20.14.12",
 		"autoprefixer": "^10.4.19",
-		"postcss": "^8.4.39",
-		"svelte": "^5.0.0-next.191",
+		"postcss": "^8.4.40",
+		"svelte": "^5.0.0-next.200",
 		"svelte-check": "^3.8.4",
-		"tailwindcss": "^3.4.6",
+		"tailwindcss": "^3.4.7",
 		"tslib": "^2.6.3",
-		"typescript": "^5.5.3",
-		"vite": "^5.3.4",
+		"typescript": "^5.5.4",
+		"vite": "^5.3.5",
 		"vite-plugin-singlefile": "^2.0.2"
 	},
 	"dependencies": {}

@@ -2,7 +2,19 @@
 
 This project template helps you get started developing a Figma plugin using Svelte and TypeScript with Vite (and Tailwind CSS).
 
-## Recommended IDE Setup
+![Plugin in action](docs/hero.png)
+
+> [!NOTE]
+> To future-proof this template I've used Svelte 5, which is perfectly usable, but not yet officially released.
+
+### Features
+
+- Build the UI using Svelte (_obviously_)
+- Complete type safety for messages between UI and logic (see [`types.d.ts`](./src/types.d.ts))
+- Use Tailwind CSS for styling
+- Quick UI prototyping thanks to Vite's hot module reloading
+
+### Recommended IDE Setup
 
 For optimal experience make sure you have the svelte extension [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode).
 
@@ -13,6 +25,9 @@ For optimal experience make sure you have the svelte extension [Svelte](https://
 - **src/**: Contains the source code for the project.
 
   - **lib/**: Contains the files you might want to reuse across the plugin ui and logic.
+
+    - `index.ts`: Contains an example of a function that can be used in both the UI and logic.
+
   - **plugin_logic/**: Contains the logic for the Figma plugin.
     Thats where you can interact with the [`figma`](https://www.figma.com/plugin-docs/api/figma/) API.
 
@@ -32,13 +47,25 @@ Other files are for configuration - you shouldn't need to touch them.
 
 > I personally recommend using [Bun](https://bun.sh/), bun you can also just use `(p)npm`. [^1]
 
-[^1] If you use raw `npm`, use `npm run <script>` instead of `bun <script>`.
+[^1]: If you use raw `npm`, use `npm run <script>` instead of `bun <script>`.
 
 ### Install dependencies
 
 ```sh
 bun install
 ```
+
+### Initial setup
+
+According to the [docs](https://www.figma.com/plugin-docs/) each plugin needs to have a unique `id` in the [`manifest.json`](./public/manifest.json).
+
+You can add one by running:
+
+```sh
+bun run gen:uuid
+```
+
+This will generate a random UUID and add it to the `manifest.json`.
 
 ### Develop just UI
 
