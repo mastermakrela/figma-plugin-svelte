@@ -28,4 +28,9 @@ type UiMessage =
 	| {
 			type: "text-message";
 			text: string;
+	  }
+	| {
+			type: "resize";
+			width: number;
+			height: number;
 	  };

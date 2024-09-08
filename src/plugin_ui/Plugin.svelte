@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Counter from "./Counter.svelte";
 	import { get_random_number } from "$lib";
+	import Resizeable from "./Resizeable.svelte";
 
 	/**
 	 * Sends a message to plugin's `code.ts` file.
@@ -38,7 +39,11 @@
 	let text = $state("");
 </script>
 
-<main class="prose h-full bg-gray-100 dark:bg-gray-900 flex flex-col items-center justify-center py-8 px-4 text-center">
+<Resizeable />
+
+<main
+	class="prose max-w-none h-full bg-gray-100 dark:bg-gray-900 flex flex-col items-center justify-center py-8 px-4 text-center"
+>
 	<h1>Figma Plugin Svelte</h1>
 
 	<p>

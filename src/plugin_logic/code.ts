@@ -15,6 +15,9 @@ function postMessage(message: PluginMessage) {
 // MARK: - Plugin
 
 figma.showUI(__html__, { themeColors: true, width: 500, height: 800 });
+figma.clientStorage.getAsync("size").then((size) => {
+	if (size) figma.ui.resize(size.width, size.height);
+});
 
 // save some state
 let count = 0;
@@ -27,6 +30,12 @@ let text = "";
  */
 figma.ui.onmessage = async (msg: UiMessage) => {
 	switch (msg.type) {
+		case "resize":
+			const { width, height } = msg;
+			figma.ui.resize(width, height);
+			figma.clientStorage.setAsync("size", { width, height });
+			break;
+
 		case "button-click":
 			console.log("Message received: button clicked in UI");
 			const random_number = get_random_number();
