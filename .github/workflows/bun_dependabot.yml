@@ -1,16 +1,16 @@
-name: 'Dependabot: Update bun.lockb'
+name: "Dependabot: Update bun.lock"
 
 on:
   pull_request:
     branches:
-    - dpendabot/*
+      - dpendabot/*
 
 permissions:
   contents: write
 
 jobs:
-  update-bun-lockb:
-    name: "Update bun.lockb"
+  update-bun-lock:
+    name: "Update bun.lock"
     if: github.actor == 'dependabot[bot]'
     runs-on: ubuntu-latest
     steps:
@@ -21,7 +21,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
       - run: |
           bun install
-          git add bun.lockb
+          git add bun.lock
           git config --global user.name 'dependabot[bot]'
           git config --global user.email 'dependabot[bot]@users.noreply.github.com'
           git commit --amend --no-edit 

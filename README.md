@@ -4,9 +4,6 @@ This project template helps you get started developing a Figma plugin using Svel
 
 ![Plugin in action](docs/hero.png)
 
-> [!NOTE]
-> To future-proof this template I've used Svelte 5, which is perfectly usable, but not yet officially released.
-
 ### Features
 
 - Build the UI using Svelte (_obviously_)
@@ -113,3 +110,8 @@ We put them in one project for ease of development and code sharing,
 but ultimately they need to be compiled separately.
 
 </details>
+
+### Technologies used
+
+- [Svelte 5](https://svelte.dev/)
+- [Tailwind CSS v4](https://tailwindcss.com/)

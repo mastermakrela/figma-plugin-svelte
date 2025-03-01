@@ -47,6 +47,12 @@
 
 <style lang="postcss">
 	#corner {
-		@apply fixed bottom-0 right-0 z-10 w-8 h-8 cursor-nwse-resize;
+		position: fixed;
+		bottom: 0;
+		right: 0;
+		z-index: 10;
+		width: 8px;
+		height: 8px;
+		cursor: nwse-resize;
 	}
 </style>

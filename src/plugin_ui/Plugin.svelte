@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Counter from "./Counter.svelte";
 	import { get_random_number } from "$lib";
+	import Counter from "./Counter.svelte";
 	import Resizeable from "./Resizeable.svelte";
 
 	/**
@@ -81,6 +81,8 @@
 </main>
 
 <style lang="postcss">
+	@reference "./app.css";
+
 	button {
 		@apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg;
 	}

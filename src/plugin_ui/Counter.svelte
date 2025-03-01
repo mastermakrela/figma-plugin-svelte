@@ -11,6 +11,8 @@
 </button>
 
 <style lang="postcss">
+	@reference "./app.css";
+
 	button {
 		@apply bg-[#f96743] text-white font-bold py-2 px-4 rounded;
 	}
