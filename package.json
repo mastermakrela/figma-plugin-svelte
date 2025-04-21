@@ -12,7 +12,7 @@
 		"gen:uuid": "bun -e 'Bun.file(`./public/manifest.json`).json().then((m) => {m.id = crypto.randomUUID(); Bun.write(`./public/manifest.json`, JSON.stringify(m, null, 2));});'"
 	},
 	"devDependencies": {
-		"@figma/plugin-typings": "^1.108.0",
+		"@figma/plugin-typings": "^1.110.0",
 		"@sveltejs/vite-plugin-svelte": "^5.0.3",
 		"@tailwindcss/typography": "^0.5.16",
 		"@tsconfig/svelte": "^5.0.4",
